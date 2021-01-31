@@ -113,8 +113,7 @@ def resolve_ep_class(interface, component, clsnm, **kwargs):
 #    Context information
 #------------------------------------------------------
 
-trac_version = tuple(int(i) for i in get_distribution('Trac').parsed_version \
-                            if i.startswith('0'))
+trac_version = tuple(map(int, get_distribution('Trac').version.split('.')))
 
 # The exact moments (versions) where some things started to change
 # in such a manner that break previous test code
